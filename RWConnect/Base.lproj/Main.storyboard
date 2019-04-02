@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="g5g-bN-aEp">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vdt-xo-4h9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DKB-8D-DtS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" systemItem="contacts" id="5IJ-mP-WhD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPI-8m-5Co">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zSF-Tv-em1" kind="relationship" relationship="rootViewController" id="9qL-9w-Swn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="etl-a3-wu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1188" y="377"/>
+        </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="uZk-7j-aqx">
+            <objects>
+                <viewController id="zSF-Tv-em1" customClass="FriendsViewController" customModule="RWConnect" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sd3-9H-14o"/>
+                        <viewControllerLayoutGuide type="bottom" id="ucY-Un-Hcd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WpV-6h-obU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mdi-gQ-rNd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ucY-Un-Hcd" firstAttribute="top" secondItem="Mdi-gQ-rNd" secondAttribute="bottom" id="7UO-Ab-WbE"/>
+                            <constraint firstItem="Mdi-gQ-rNd" firstAttribute="top" secondItem="sd3-9H-14o" secondAttribute="bottom" id="8sZ-Kb-FqR"/>
+                            <constraint firstItem="Mdi-gQ-rNd" firstAttribute="leading" secondItem="WpV-6h-obU" secondAttribute="leading" id="AbG-Ua-ZQJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Mdi-gQ-rNd" secondAttribute="trailing" id="jFb-d6-s0o"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="UUP-9K-jT3">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="AddButton" id="fs2-Dn-lmc">
+                            <connections>
+                                <action selector="addFriends:" destination="zSF-Tv-em1" id="gYh-FD-hbe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Mdi-gQ-rNd" id="OXP-hR-wt4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AeA-EX-a1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2001" y="384"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4TC-Oi-Ix8">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="g5g-bN-aEp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="0vc-TA-V0H">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DKB-8D-DtS" kind="relationship" relationship="viewControllers" id="wNB-oJ-ebx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oli-3r-ccY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376" y="377"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AddButton" width="22" height="22"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.60784313729999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
